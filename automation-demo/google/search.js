@@ -12,6 +12,7 @@ const search = async (driver, searchTerm) => {
     // Instead of using the sendKeys method, we are using the getText method which will return 
     // the text in that element as a string
     let resultsText = await driver.findElement(By.id('res')).getText()
+    console.log(resultsText);
 
     // We make our restults lower case and then expect it to contain our original search term
     expect(resultsText.toLowerCase()).toContain(searchTerm.toLowerCase())
